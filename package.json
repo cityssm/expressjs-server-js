@@ -1,0 +1,19 @@
+{
+  "name": "@cityssm/expressjs-server",
+  "version": "0.0.1",
+  "description": "Shared server-side JavaScript modules used by the lottery-licence-manager and parking-ticket-system.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cityssm/expressjs-server-js.git"
+  },
+  "author": "Corporation of the City of Sault Ste. Marie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cityssm/expressjs-server-js/issues"
+  },
+  "homepage": "https://github.com/cityssm/expressjs-server-js#readme"
+}
