@@ -1,60 +1,3 @@
-"use strict";
-
-
-/*
- * Date Functions
- */
-
-export function dateIntegerToString(dateInteger: number): string {
-
-  if (dateInteger === null || dateInteger === 0) {
-    return "";
-  }
-
-  const dateString = dateInteger.toString();
-  return dateString.substring(0, 4) + "-" + dateString.substring(4, 6) + "-" + dateString.substring(6, 8);
-
-}
-
-export function dateToString(dateObj: Date): string {
-
-  return dateObj.getFullYear() + "-" +
-    ("0" + (dateObj.getMonth() + 1)).slice(-2) + "-" +
-    ("0" + (dateObj.getDate())).slice(-2);
-
-}
-
-export function dateToInteger(dateObj: Date): number {
-
-  return (dateObj.getFullYear() * 10000) +
-    (dateObj.getMonth() * 100) + 100 +
-    dateObj.getDate();
-
-}
-
-export function dateStringToInteger(dateString: string): number {
-
-  return parseInt(("0" + dateString).replace(/-/g, ""));
-
-}
-
-function dateStringToDate(dateString: string) {
-
-  const datePieces = dateString.split("-");
-
-  return new Date(parseInt(datePieces[0]), parseInt(datePieces[1]) - 1, parseInt(datePieces[2]), 0, 0, 0, 0);
-}
-
-function dateDifferenceInDays(fromDateObj: Date, toDateObj: Date) {
-
-  return Math.round((toDateObj.getTime() - fromDateObj.getTime()) / (86400 * 1000.0));
-}
-
-export function dateStringDifferenceInDays(fromDateString: string, toDateString: string) {
-
-  return dateDifferenceInDays(dateStringToDate(fromDateString), dateStringToDate(toDateString));
-}
-
 export const months = [
   "January",
   "February",
@@ -70,9 +13,89 @@ export const months = [
   "December"
 ];
 
+
+/*
+ * Date Functions
+ */
+
+
+// From Date Object
+
+export function dateToInteger(dateObj: Date): number {
+
+  return (dateObj.getFullYear() * 10000) +
+    (dateObj.getMonth() * 100) + 100 +
+    dateObj.getDate();
+
+}
+
+export function dateToString(dateObj: Date): string {
+
+  return dateObj.getFullYear() + "-" +
+    ("0" + (dateObj.getMonth() + 1)).slice(-2) + "-" +
+    ("0" + (dateObj.getDate())).slice(-2);
+
+}
+
+// From Date Integer
+// 20200425
+
+export function dateIntegerToString(dateInteger: number): string {
+
+  if (dateInteger === null || dateInteger === 0) {
+    return "";
+  }
+
+  const dateString = dateInteger.toString();
+  return dateString.substring(0, 4) + "-" + dateString.substring(4, 6) + "-" + dateString.substring(6, 8);
+
+}
+
+// From Date String
+// "2020-04-25"
+
+export function dateStringToDate(dateString: string) {
+
+  const datePieces = dateString.split("-");
+  return new Date(parseInt(datePieces[0]), parseInt(datePieces[1]) - 1, parseInt(datePieces[2]), 0, 0, 0, 0);
+}
+
+export function dateStringToInteger(dateString: string): number {
+
+  return parseInt(("0" + dateString).replace(/-/g, ""));
+
+}
+
+
+export function dateDifferenceInDays(fromDateObj: Date, toDateObj: Date) {
+
+  return Math.round((toDateObj.getTime() - fromDateObj.getTime()) / (86400 * 1000.0));
+}
+
+export function dateStringDifferenceInDays(fromDateString: string, toDateString: string) {
+
+  return dateDifferenceInDays(dateStringToDate(fromDateString), dateStringToDate(toDateString));
+}
+
+
 /*
  * Time Functions
  */
+
+// From Date Object
+
+export function dateToTimeInteger(dateObj: Date): number {
+  return (dateObj.getHours() * 100) + dateObj.getMinutes();
+}
+
+export function dateToTimeString(dateObj: Date): string {
+  return ("00" + dateObj.getHours().toString()).slice(-2) +
+    ":" +
+    ("00" + dateObj.getMinutes().toString()).slice(-2);
+}
+
+// From Time Integer
+// 1424
 
 export function timeIntegerToString(timeInteger: number): string {
 
@@ -81,12 +104,11 @@ export function timeIntegerToString(timeInteger: number): string {
 
 }
 
+// From Time String
+// "14:24"
+
 export function timeStringToInteger(timeString: string): number {
 
   return parseInt(("0" + timeString).replace(/:/g, ""));
 
-}
-
-export function dateToTimeInteger(dateObj: Date): number {
-  return (dateObj.getHours() * 100) + dateObj.getMinutes();
 }
