@@ -1,4 +1,5 @@
 export declare const months: string[];
+export declare const days: string[];
 export declare function dateToInteger(dateObj: Date): number;
 export declare function dateToString(dateObj: Date): string;
 export declare function dateIntegerToString(dateInteger: number): string;

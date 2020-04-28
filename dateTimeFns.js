@@ -14,6 +14,15 @@ exports.months = [
     "November",
     "December"
 ];
+exports.days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+];
 function dateToInteger(dateObj) {
     return (dateObj.getFullYear() * 10000) +
         (dateObj.getMonth() * 100) + 100 +
