@@ -1,7 +1,7 @@
 import { RawRowsColumnsReturn } from "./types";
 
-import goodWords = require("./node_modules/fresh-password/lib/words/good.json");
-import badWords = require("./node_modules/fresh-password/lib/words/bad.json");
+import goodWords = require("fresh-password/lib/words/good.json");
+import badWords = require("fresh-password/lib/words/bad.json");
 
 const convertArrayToCSV = require("convert-array-to-csv").convertArrayToCSV;
 

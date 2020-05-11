@@ -1,4 +1,4 @@
-import dateTimeFns = require("./dateTimeFns");
+import * as dateTimeFns from "./dateTimeFns";
 
 const currentDate = new Date();
 
@@ -9,3 +9,9 @@ console.log("dateToString()  -> " + dateTimeFns.dateToString(currentDate));
 console.log("\n");
 console.log("dateToTimeInteger() -> " + dateTimeFns.dateToTimeInteger(currentDate));
 console.log("dateToTimeString()  -> " + dateTimeFns.dateToTimeString(currentDate));
+console.log("\n");
+
+
+import * as stringFns from "./stringFns";
+
+console.log("stringFns.generatePassword()  -> " + stringFns.generatePassword());

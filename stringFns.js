@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const goodWords = require("./node_modules/fresh-password/lib/words/good.json");
-const badWords = require("./node_modules/fresh-password/lib/words/bad.json");
+const goodWords = require("fresh-password/lib/words/good.json");
+const badWords = require("fresh-password/lib/words/bad.json");
 const convertArrayToCSV = require("convert-array-to-csv").convertArrayToCSV;
 function rawToCSV(rowsColumnsObj) {
     const columnNames = new Array(rowsColumnsObj.columns.length);

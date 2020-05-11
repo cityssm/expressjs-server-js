@@ -9,3 +9,6 @@ console.log("dateToString()  -> " + dateTimeFns.dateToString(currentDate));
 console.log("\n");
 console.log("dateToTimeInteger() -> " + dateTimeFns.dateToTimeInteger(currentDate));
 console.log("dateToTimeString()  -> " + dateTimeFns.dateToTimeString(currentDate));
+console.log("\n");
+const stringFns = require("./stringFns");
+console.log("stringFns.generatePassword()  -> " + stringFns.generatePassword());
