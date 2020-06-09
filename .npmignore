@@ -1,0 +1,7 @@
+node_modules
+.atomignore
+.eslintrc.yml
+.gitignore
+.npmignore
+*.ts
+!*.t.ts

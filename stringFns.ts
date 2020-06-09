@@ -1,9 +1,9 @@
 import { RawRowsColumnsReturn } from "./types";
 
-import goodWords = require("fresh-password/lib/words/good.json");
-import badWords = require("fresh-password/lib/words/bad.json");
+import * as goodWords from "fresh-password/lib/words/good.json";
+import * as badWords from "fresh-password/lib/words/bad.json";
 
-const convertArrayToCSV = require("convert-array-to-csv").convertArrayToCSV;
+import { convertArrayToCSV } from "convert-array-to-csv";
 
 
 export function rawToCSV(rowsColumnsObj: RawRowsColumnsReturn): string {

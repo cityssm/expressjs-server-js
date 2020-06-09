@@ -2,13 +2,13 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const goodWords = require("fresh-password/lib/words/good.json");
 const badWords = require("fresh-password/lib/words/bad.json");
-const convertArrayToCSV = require("convert-array-to-csv").convertArrayToCSV;
+const convert_array_to_csv_1 = require("convert-array-to-csv");
 function rawToCSV(rowsColumnsObj) {
     const columnNames = new Array(rowsColumnsObj.columns.length);
     for (let columnIndex = 0; columnIndex < rowsColumnsObj.columns.length; columnIndex += 1) {
         columnNames[columnIndex] = rowsColumnsObj.columns[columnIndex].name;
     }
-    const csv = convertArrayToCSV(rowsColumnsObj.rows, {
+    const csv = convert_array_to_csv_1.convertArrayToCSV(rowsColumnsObj.rows, {
         header: columnNames,
         separator: ","
     });
