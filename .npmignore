@@ -3,5 +3,3 @@ node_modules
 .eslintrc.yml
 .gitignore
 .npmignore
-*.ts
-!*.t.ts
