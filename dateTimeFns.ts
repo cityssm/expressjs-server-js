@@ -67,12 +67,12 @@ export function dateIntegerToString(dateInteger: number): string {
 export function dateStringToDate(dateString: string) {
 
   const datePieces = dateString.split("-");
-  return new Date(parseInt(datePieces[0]), parseInt(datePieces[1]) - 1, parseInt(datePieces[2]), 0, 0, 0, 0);
+  return new Date(parseInt(datePieces[0], 10), parseInt(datePieces[1], 10) - 1, parseInt(datePieces[2], 10), 0, 0, 0, 0);
 }
 
 export function dateStringToInteger(dateString: string): number {
 
-  return parseInt(("0" + dateString).replace(/-/g, ""));
+  return parseInt(("0" + dateString).replace(/-/g, ""), 10);
 
 }
 
@@ -119,6 +119,6 @@ export function timeIntegerToString(timeInteger: number): string {
 
 export function timeStringToInteger(timeString: string): number {
 
-  return parseInt(("0" + timeString).replace(/:/g, ""));
+  return parseInt(("0" + timeString).replace(/:/g, ""), 10);
 
 }
