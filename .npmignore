@@ -3,3 +3,4 @@ node_modules
 .eslintrc.yml
 .gitignore
 .npmignore
+tsconfig.json
