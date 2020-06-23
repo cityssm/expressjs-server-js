@@ -1,18 +1,19 @@
+import * as log from "fancy-log";
 import * as dateTimeFns from "./dateTimeFns";
 
 const currentDate = new Date();
 
-console.log("Current Date: " + currentDate);
-console.log("\n");
-console.log("dateToInteger() -> " + dateTimeFns.dateToInteger(currentDate));
-console.log("dateToString()  -> " + dateTimeFns.dateToString(currentDate));
-console.log("dateStringToDate(dateToString())  -> " + dateTimeFns.dateStringToDate(dateTimeFns.dateToString(currentDate)));
-console.log("\n");
-console.log("dateToTimeInteger() -> " + dateTimeFns.dateToTimeInteger(currentDate));
-console.log("dateToTimeString()  -> " + dateTimeFns.dateToTimeString(currentDate));
-console.log("\n");
+log.info("Current Date: " + currentDate);
+log.info("\n");
+log.info("dateToInteger() -> " + dateTimeFns.dateToInteger(currentDate));
+log.info("dateToString()  -> " + dateTimeFns.dateToString(currentDate));
+log.info("dateStringToDate(dateToString())  -> " + dateTimeFns.dateStringToDate(dateTimeFns.dateToString(currentDate)));
+log.info("\n");
+log.info("dateToTimeInteger() -> " + dateTimeFns.dateToTimeInteger(currentDate));
+log.info("dateToTimeString()  -> " + dateTimeFns.dateToTimeString(currentDate));
+log.info("\n");
 
 
 import * as stringFns from "./stringFns";
 
-console.log("stringFns.generatePassword()  -> " + stringFns.generatePassword());
+log.info("stringFns.generatePassword()  -> " + stringFns.generatePassword());

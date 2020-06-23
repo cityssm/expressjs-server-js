@@ -29,19 +29,19 @@ export function rawToCSV(rowsColumnsObj: RawRowsColumnsReturn): string {
 export function generatePassword() {
 
   // Generate 4 random numbers
-  let r1 = randomInt(0, goodWords.length);
-  let r2 = randomInt(0, goodWords.length);
-  let r3 = randomInt(0, 9);
-  let r4 = randomInt(0, 9);
+  const r1 = randomInt(0, goodWords.length);
+  const r2 = randomInt(0, goodWords.length);
+  const r3 = randomInt(0, 9);
+  const r4 = randomInt(0, 9);
 
   // Pick first and second words
-  let firstWord = goodWords[r1];
-  let secondWord = goodWords[r2];
+  const firstWord = goodWords[r1];
+  const secondWord = goodWords[r2];
 
   // Generate combined password
   let password = `${firstWord}${secondWord[0].toUpperCase()}${secondWord.substring(1)}${r3}${r4}`;
 
-  let passwordLowerCase = password.toLowerCase();
+  const passwordLowerCase = password.toLowerCase();
 
   // Check to see if the combination creates any "offensive" words
   for (let i = 0; i < badWords.length; i++) {
@@ -69,11 +69,7 @@ function randomInt(low: number, high: number) {
 let uid = Date.now();
 
 export function getUID() {
-
   const toReturn = uid;
-
   uid += 1;
-
   return "uid" + toReturn.toString();
-
 }

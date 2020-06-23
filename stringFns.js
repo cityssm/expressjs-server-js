@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.getUID = exports.generatePassword = exports.rawToCSV = void 0;
 const goodWords = require("fresh-password/lib/words/good.json");
 const badWords = require("fresh-password/lib/words/bad.json");
 const convert_array_to_csv_1 = require("convert-array-to-csv");
@@ -16,14 +17,14 @@ function rawToCSV(rowsColumnsObj) {
 }
 exports.rawToCSV = rawToCSV;
 function generatePassword() {
-    let r1 = randomInt(0, goodWords.length);
-    let r2 = randomInt(0, goodWords.length);
-    let r3 = randomInt(0, 9);
-    let r4 = randomInt(0, 9);
-    let firstWord = goodWords[r1];
-    let secondWord = goodWords[r2];
+    const r1 = randomInt(0, goodWords.length);
+    const r2 = randomInt(0, goodWords.length);
+    const r3 = randomInt(0, 9);
+    const r4 = randomInt(0, 9);
+    const firstWord = goodWords[r1];
+    const secondWord = goodWords[r2];
     let password = `${firstWord}${secondWord[0].toUpperCase()}${secondWord.substring(1)}${r3}${r4}`;
-    let passwordLowerCase = password.toLowerCase();
+    const passwordLowerCase = password.toLowerCase();
     for (let i = 0; i < badWords.length; i++) {
         if (passwordLowerCase.indexOf(badWords[i]) > -1) {
             password = generatePassword();
