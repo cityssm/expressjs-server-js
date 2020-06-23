@@ -8,12 +8,10 @@ import { convertArrayToCSV } from "convert-array-to-csv";
 
 export function rawToCSV(rowsColumnsObj: RawRowsColumnsReturn): string {
 
-  const columnNames = new Array(rowsColumnsObj.columns.length);
+  const columnNames = [];
 
-  for (let columnIndex = 0; columnIndex < rowsColumnsObj.columns.length; columnIndex += 1) {
-
-    columnNames[columnIndex] = rowsColumnsObj.columns[columnIndex].name;
-
+  for (const columnDefinition of rowsColumnsObj.columns) {
+    columnNames.push(columnDefinition.name);
   }
 
   const csv = convertArrayToCSV(rowsColumnsObj.rows, {
@@ -51,8 +49,8 @@ export function generatePassword() {
   const passwordLowerCase = password.toLowerCase();
 
   // Check to see if the combination creates any "offensive" words
-  for (let i = 0; i < badWords.length; i++) {
-    if (passwordLowerCase.indexOf(badWords[i]) > -1) {
+  for (const badWord of badWords) {
+    if (passwordLowerCase.indexOf(badWord) > -1) {
       // If so, recursively regenerate
       password = generatePassword();
     }

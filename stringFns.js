@@ -5,9 +5,9 @@ const goodWords = require("fresh-password/lib/words/good.json");
 const badWords = require("fresh-password/lib/words/bad.json");
 const convert_array_to_csv_1 = require("convert-array-to-csv");
 function rawToCSV(rowsColumnsObj) {
-    const columnNames = new Array(rowsColumnsObj.columns.length);
-    for (let columnIndex = 0; columnIndex < rowsColumnsObj.columns.length; columnIndex += 1) {
-        columnNames[columnIndex] = rowsColumnsObj.columns[columnIndex].name;
+    const columnNames = [];
+    for (const columnDefinition of rowsColumnsObj.columns) {
+        columnNames.push(columnDefinition.name);
     }
     const csv = convert_array_to_csv_1.convertArrayToCSV(rowsColumnsObj.rows, {
         header: columnNames,
@@ -28,8 +28,8 @@ function generatePassword() {
     const secondWord = goodWords[r2];
     let password = `${firstWord}${secondWord[0].toUpperCase()}${secondWord.substring(1)}${r3}${r4}`;
     const passwordLowerCase = password.toLowerCase();
-    for (let i = 0; i < badWords.length; i++) {
-        if (passwordLowerCase.indexOf(badWords[i]) > -1) {
+    for (const badWord of badWords) {
+        if (passwordLowerCase.indexOf(badWord) > -1) {
             password = generatePassword();
         }
     }
