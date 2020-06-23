@@ -16,6 +16,9 @@ function rawToCSV(rowsColumnsObj) {
     return csv;
 }
 exports.rawToCSV = rawToCSV;
+function randomInt(low, high) {
+    return Math.floor(Math.random() * (high - low + 1) + low);
+}
 function generatePassword() {
     const r1 = randomInt(0, goodWords.length);
     const r2 = randomInt(0, goodWords.length);
@@ -33,9 +36,6 @@ function generatePassword() {
     return password;
 }
 exports.generatePassword = generatePassword;
-function randomInt(low, high) {
-    return Math.floor(Math.random() * (high - low + 1) + low);
-}
 let uid = Date.now();
 function getUID() {
     const toReturn = uid;

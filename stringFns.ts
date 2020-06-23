@@ -25,6 +25,13 @@ export function rawToCSV(rowsColumnsObj: RawRowsColumnsReturn): string {
 
 }
 
+/*
+ * PASSWORD GENERATION
+ */
+
+function randomInt(low: number, high: number) {
+  return Math.floor(Math.random() * (high - low + 1) + low);
+}
 
 export function generatePassword() {
 
@@ -53,14 +60,7 @@ export function generatePassword() {
 
   // Return the final password
   return password;
-
 }
-
-
-function randomInt(low: number, high: number) {
-  return Math.floor(Math.random() * (high - low + 1) + low);
-}
-
 
 /*
  * UID GENERATOR
