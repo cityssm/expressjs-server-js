@@ -1,6 +1,6 @@
 node_modules
 .atomignore
+.eslintrc.js
 .gitignore
 .npmignore
 tsconfig.json
-tslint.json

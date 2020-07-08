@@ -1,4 +1,5 @@
 import { RawRowsColumnsReturn } from "./types";
-export declare function rawToCSV(rowsColumnsObj: RawRowsColumnsReturn): string;
-export declare function generatePassword(): string;
-export declare function getUID(): string;
+export declare const rawToCSV: (rowsColumnsObj: RawRowsColumnsReturn) => string;
+export declare const escapeHTML: (str: string) => string;
+export declare const generatePassword: () => string;
+export declare const getUID: () => string;

@@ -6,7 +6,7 @@ import * as badWords from "fresh-password/lib/words/bad.json";
 import { convertArrayToCSV } from "convert-array-to-csv";
 
 
-export function rawToCSV(rowsColumnsObj: RawRowsColumnsReturn): string {
+export const rawToCSV = (rowsColumnsObj: RawRowsColumnsReturn): string => {
 
   const columnNames = [];
 
@@ -21,17 +21,28 @@ export function rawToCSV(rowsColumnsObj: RawRowsColumnsReturn): string {
 
   return csv;
 
-}
+};
+
+
+export const escapeHTML = (str: string) => {
+
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+};
+
 
 /*
  * PASSWORD GENERATION
  */
 
-function randomInt(low: number, high: number) {
+const randomInt = (low: number, high: number) => {
   return Math.floor(Math.random() * (high - low + 1) + low);
-}
+};
 
-export function generatePassword() {
+export const generatePassword = () => {
 
   // Generate 4 random numbers
   const r1 = randomInt(0, goodWords.length);
@@ -50,7 +61,7 @@ export function generatePassword() {
 
   // Check to see if the combination creates any "offensive" words
   for (const badWord of badWords) {
-    if (passwordLowerCase.indexOf(badWord) > -1) {
+    if (passwordLowerCase.includes(badWord)) {
       // If so, recursively regenerate
       password = generatePassword();
     }
@@ -58,7 +69,7 @@ export function generatePassword() {
 
   // Return the final password
   return password;
-}
+};
 
 /*
  * UID GENERATOR
@@ -66,8 +77,8 @@ export function generatePassword() {
 
 let uid = Date.now();
 
-export function getUID() {
+export const getUID = () => {
   const toReturn = uid;
   uid += 1;
   return "uid" + toReturn.toString();
-}
+};
