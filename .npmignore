@@ -1,6 +1,7 @@
 node_modules
 .atomignore
 .eslintrc.js
+.github
 .gitignore
 .npmignore
 tsconfig.json
