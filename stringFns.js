@@ -32,11 +32,11 @@ exports.generatePassword = () => {
     const r4 = randomInt(0, 9);
     const firstWord = goodWords[r1];
     const secondWord = goodWords[r2];
-    let password = `${firstWord}${secondWord[0].toUpperCase()}${secondWord.substring(1)}${r3}${r4}`;
+    const password = `${firstWord}${secondWord[0].toUpperCase()}${secondWord.substring(1)}${r3}${r4}`;
     const passwordLowerCase = password.toLowerCase();
     for (const badWord of badWords) {
         if (passwordLowerCase.includes(badWord)) {
-            password = exports.generatePassword();
+            return exports.generatePassword();
         }
     }
     return password;

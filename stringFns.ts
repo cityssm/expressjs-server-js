@@ -55,7 +55,7 @@ export const generatePassword = () => {
   const secondWord = goodWords[r2];
 
   // Generate combined password
-  let password = `${firstWord}${secondWord[0].toUpperCase()}${secondWord.substring(1)}${r3}${r4}`;
+  const password = `${firstWord}${secondWord[0].toUpperCase()}${secondWord.substring(1)}${r3}${r4}`;
 
   const passwordLowerCase = password.toLowerCase();
 
@@ -63,7 +63,7 @@ export const generatePassword = () => {
   for (const badWord of badWords) {
     if (passwordLowerCase.includes(badWord)) {
       // If so, recursively regenerate
-      password = generatePassword();
+      return generatePassword();
     }
   }
 
