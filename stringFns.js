@@ -1,8 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getUID = exports.generatePassword = exports.escapeHTML = exports.rawToCSV = void 0;
-const goodWords = require("fresh-password/lib/words/good.json");
-const badWords = require("fresh-password/lib/words/bad.json");
+const simple_password_generator_1 = require("@cityssm/simple-password-generator");
 const convert_array_to_csv_1 = require("convert-array-to-csv");
 exports.rawToCSV = (rowsColumnsObj) => {
     const columnNames = [];
@@ -22,24 +21,10 @@ exports.escapeHTML = (str) => {
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;");
 };
-const randomInt = (low, high) => {
-    return Math.floor(Math.random() * (high - low + 1) + low);
-};
 exports.generatePassword = () => {
-    const r1 = randomInt(0, goodWords.length);
-    const r2 = randomInt(0, goodWords.length);
-    const r3 = randomInt(0, 9);
-    const r4 = randomInt(0, 9);
-    const firstWord = goodWords[r1];
-    const secondWord = goodWords[r2];
-    const password = `${firstWord}${secondWord[0].toUpperCase()}${secondWord.substring(1)}${r3}${r4}`;
-    const passwordLowerCase = password.toLowerCase();
-    for (const badWord of badWords) {
-        if (passwordLowerCase.includes(badWord)) {
-            return exports.generatePassword();
-        }
-    }
-    return password;
+    return simple_password_generator_1.generatePassword({
+        pattern: "wWnn"
+    });
 };
 let uid = Date.now();
 exports.getUID = () => {

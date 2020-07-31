@@ -1,7 +1,6 @@
 import { RawRowsColumnsReturn } from "./types";
 
-import * as goodWords from "fresh-password/lib/words/good.json";
-import * as badWords from "fresh-password/lib/words/bad.json";
+import { generatePassword as spgGeneratePassword } from "@cityssm/simple-password-generator";
 
 import { convertArrayToCSV } from "convert-array-to-csv";
 
@@ -38,37 +37,10 @@ export const escapeHTML = (str: string) => {
  * PASSWORD GENERATION
  */
 
-const randomInt = (low: number, high: number) => {
-  return Math.floor(Math.random() * (high - low + 1) + low);
-};
-
 export const generatePassword = () => {
-
-  // Generate 4 random numbers
-  const r1 = randomInt(0, goodWords.length);
-  const r2 = randomInt(0, goodWords.length);
-  const r3 = randomInt(0, 9);
-  const r4 = randomInt(0, 9);
-
-  // Pick first and second words
-  const firstWord = goodWords[r1];
-  const secondWord = goodWords[r2];
-
-  // Generate combined password
-  const password = `${firstWord}${secondWord[0].toUpperCase()}${secondWord.substring(1)}${r3}${r4}`;
-
-  const passwordLowerCase = password.toLowerCase();
-
-  // Check to see if the combination creates any "offensive" words
-  for (const badWord of badWords) {
-    if (passwordLowerCase.includes(badWord)) {
-      // If so, recursively regenerate
-      return generatePassword();
-    }
-  }
-
-  // Return the final password
-  return password;
+  return spgGeneratePassword({
+    pattern: "wWnn"
+  });
 };
 
 /*
