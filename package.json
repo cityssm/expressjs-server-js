@@ -1,6 +1,6 @@
 {
   "name": "@cityssm/expressjs-server-js",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Shared server-side JavaScript modules used by the lottery-licence-manager and parking-ticket-system.",
   "main": "index.js",
   "scripts": {
@@ -17,15 +17,15 @@
   },
   "homepage": "https://github.com/cityssm/expressjs-server-js#readme",
   "dependencies": {
-    "@cityssm/simple-password-generator": "^0.6.0",
+    "@cityssm/simple-password-generator": "^0.6.2",
     "convert-array-to-csv": "^2.0.0"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^5.4.0",
     "@types/fancy-log": "^1.3.1",
-    "@typescript-eslint/eslint-plugin": "^3.7.1",
-    "@typescript-eslint/parser": "^3.7.1",
-    "eslint": "^7.5.0",
+    "@typescript-eslint/eslint-plugin": "^3.8.0",
+    "@typescript-eslint/parser": "^3.8.0",
+    "eslint": "^7.6.0",
     "eslint-config-standard-with-typescript": "^18.0.2",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-node": "^11.1.0",
