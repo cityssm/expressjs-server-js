@@ -1,6 +1,6 @@
 {
   "name": "@cityssm/expressjs-server-js",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Shared server-side JavaScript modules used by the lottery-licence-manager and parking-ticket-system.",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/cityssm/expressjs-server-js#readme",
   "dependencies": {
-    "@cityssm/simple-password-generator": "^0.6.2",
+    "@cityssm/simple-password-generator": "^0.6.3",
     "convert-array-to-csv": "^2.0.0"
   },
   "devDependencies": {
