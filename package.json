@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/cityssm/expressjs-server-js#readme",
   "dependencies": {
-    "@cityssm/simple-password-generator": "^0.6.3",
+    "@cityssm/simple-password-generator": "^0.7.0",
     "convert-array-to-csv": "^2.0.0"
   },
   "devDependencies": {
