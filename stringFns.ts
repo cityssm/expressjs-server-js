@@ -23,16 +23,6 @@ export const rawToCSV = (rowsColumnsObj: RawRowsColumnsReturn): string => {
 };
 
 
-export const escapeHTML = (str: string) => {
-
-  return String(str)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-};
-
-
 /*
  * PASSWORD GENERATION
  */
