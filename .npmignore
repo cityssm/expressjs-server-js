@@ -1,7 +1,13 @@
+.git
+.github
+.nyc_output
+coverage
 node_modules
+test
+
 .atomignore
 .eslintrc.js
-.github
 .gitignore
 .npmignore
+.travis.yml
 tsconfig.json

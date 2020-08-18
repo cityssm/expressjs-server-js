@@ -41,9 +41,9 @@ export function dateToInteger(dateObj: Date): number {
 
 export function dateToString(dateObj: Date): string {
 
-  return dateObj.getFullYear() + "-" +
-    ("0" + (dateObj.getMonth() + 1)).slice(-2) + "-" +
-    ("0" + (dateObj.getDate())).slice(-2);
+  return dateObj.getFullYear().toString() + "-" +
+    ("0" + (dateObj.getMonth() + 1).toString()).slice(-2) + "-" +
+    ("0" + dateObj.getDate().toString()).slice(-2);
 
 }
 

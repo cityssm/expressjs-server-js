@@ -1,5 +1,5 @@
 import sqlite = require("better-sqlite3");
-export declare type RawRowsColumnsReturn = {
+export interface RawRowsColumnsReturn {
     rows: object[];
     columns: sqlite.ColumnDefinition[];
-};
+}

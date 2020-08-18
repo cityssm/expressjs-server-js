@@ -31,9 +31,9 @@ function dateToInteger(dateObj) {
 }
 exports.dateToInteger = dateToInteger;
 function dateToString(dateObj) {
-    return dateObj.getFullYear() + "-" +
-        ("0" + (dateObj.getMonth() + 1)).slice(-2) + "-" +
-        ("0" + (dateObj.getDate())).slice(-2);
+    return dateObj.getFullYear().toString() + "-" +
+        ("0" + (dateObj.getMonth() + 1).toString()).slice(-2) + "-" +
+        ("0" + dateObj.getDate().toString()).slice(-2);
 }
 exports.dateToString = dateToString;
 function dateIntegerToString(dateInteger) {
