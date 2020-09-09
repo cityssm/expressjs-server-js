@@ -11,7 +11,7 @@ describe("htmlFns", () => {
             assert.strictEqual(htmlFns.formatDollarsAsHTML(-5), "<span class=\"has-text-danger\">($5.00)</span>");
         });
     });
-    describe("#formatDollarsAsHTML()", () => {
+    describe("#escapeHTML()", () => {
         it("Converts \"<br />\" to \"&lt;br /&gt;\"", () => {
             assert.strictEqual(htmlFns.escapeHTML("<br />"), "&lt;br /&gt;");
         });

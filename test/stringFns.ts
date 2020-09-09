@@ -36,7 +36,7 @@ describe("stringFns", () => {
         ]
       };
 
-      assert.equal(stringFns.rawToCSV(rawData),
+      assert.strictEqual(stringFns.rawToCSV(rawData),
         "col1,col2,col3\n" +
         "col1a,col2a,col3a\n" +
         "col1b,col2b,col3b\n"

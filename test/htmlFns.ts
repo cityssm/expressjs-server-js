@@ -14,7 +14,7 @@ describe("htmlFns", () => {
     });
   });
 
-  describe("#formatDollarsAsHTML()", () => {
+  describe("#escapeHTML()", () => {
     it("Converts \"<br />\" to \"&lt;br /&gt;\"", () => {
       assert.strictEqual(htmlFns.escapeHTML("<br />"), "&lt;br /&gt;");
     });
