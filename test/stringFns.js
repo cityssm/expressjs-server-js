@@ -44,7 +44,7 @@ describe("stringFns", () => {
     });
     describe("#getUID()", () => {
         it("Two consecutive calls return different values", () => {
-            assert.notEqual(stringFns.getUID(), stringFns.getUID());
+            assert.notStrictEqual(stringFns.getUID(), stringFns.getUID());
         });
     });
 });
