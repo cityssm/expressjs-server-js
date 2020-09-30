@@ -21,6 +21,17 @@ describe("dateTimeFns", () => {
             assert.strictEqual(dateTimeFns.dateIntegerToString(null), "");
         });
     });
+    describe("#dateIntegerToDate()", () => {
+        it("Converts 19700101 to Date(1970, 1 - 1, 1)", () => {
+            assert.strictEqual(dateTimeFns.dateIntegerToDate(19700101).getTime(), new Date(1970, 1 - 1, 1).getTime());
+        });
+        it("Converts null to null", () => {
+            assert.strictEqual(dateTimeFns.dateIntegerToDate(null), null);
+        });
+        it("Converts 0 to null", () => {
+            assert.strictEqual(dateTimeFns.dateIntegerToDate(0), null);
+        });
+    });
     describe("#dateStringToDate()", () => {
         it("Converts \"1970-01-01\" to Date(1970, 1 - 1, 1)", () => {
             assert.strictEqual(dateTimeFns.dateStringToDate("1970-01-01").getTime(), new Date(1970, 1 - 1, 1).getTime());
@@ -54,6 +65,9 @@ describe("dateTimeFns", () => {
     describe("#timeIntegerToString()", () => {
         it("Converts 123 to \"01:23\"", () => {
             assert.strictEqual(dateTimeFns.timeIntegerToString(123), "01:23");
+        });
+        it("Converts 0 to \"00:00\"", () => {
+            assert.strictEqual(dateTimeFns.timeIntegerToString(0), "00:00");
         });
     });
     describe("#timeStringToInteger()", () => {

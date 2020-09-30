@@ -61,6 +61,20 @@ export function dateIntegerToString(dateInteger: number): string {
 
 }
 
+export function dateIntegerToDate(dateInteger: number): Date {
+
+  if (dateInteger === null || dateInteger === 0) {
+    return null;
+  }
+
+  const dateString = dateInteger.toString();
+  return new Date(
+    parseInt(dateString.substring(0, 4), 10),
+    parseInt(dateString.substring(4, 6), 10) - 1,
+    parseInt(dateString.substring(6, 8), 10));
+
+}
+
 // From Date String
 // "2020-04-25"
 

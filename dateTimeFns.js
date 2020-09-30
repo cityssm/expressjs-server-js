@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.timeStringToInteger = exports.timeIntegerToString = exports.dateToTimeString = exports.dateToTimeInteger = exports.dateStringDifferenceInDays = exports.dateDifferenceInDays = exports.dateStringToInteger = exports.dateStringToDate = exports.dateIntegerToString = exports.dateToString = exports.dateToInteger = exports.days = exports.months = void 0;
+exports.timeStringToInteger = exports.timeIntegerToString = exports.dateToTimeString = exports.dateToTimeInteger = exports.dateStringDifferenceInDays = exports.dateDifferenceInDays = exports.dateStringToInteger = exports.dateStringToDate = exports.dateIntegerToDate = exports.dateIntegerToString = exports.dateToString = exports.dateToInteger = exports.days = exports.months = void 0;
 exports.months = [
     "January",
     "February",
@@ -44,6 +44,14 @@ function dateIntegerToString(dateInteger) {
     return dateString.substring(0, 4) + "-" + dateString.substring(4, 6) + "-" + dateString.substring(6, 8);
 }
 exports.dateIntegerToString = dateIntegerToString;
+function dateIntegerToDate(dateInteger) {
+    if (dateInteger === null || dateInteger === 0) {
+        return null;
+    }
+    const dateString = dateInteger.toString();
+    return new Date(parseInt(dateString.substring(0, 4), 10), parseInt(dateString.substring(4, 6), 10) - 1, parseInt(dateString.substring(6, 8), 10));
+}
+exports.dateIntegerToDate = dateIntegerToDate;
 function dateStringToDate(dateString) {
     const datePieces = dateString.split("-");
     return new Date(parseInt(datePieces[0], 10), parseInt(datePieces[1], 10) - 1, parseInt(datePieces[2], 10), 0, 0, 0, 0);
