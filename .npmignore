@@ -10,5 +10,5 @@ test
 .eslintrc.js
 .gitignore
 .npmignore
-.travis.yml
+appveyor.yml
 tsconfig.json
