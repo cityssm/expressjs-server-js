@@ -1,5 +1,6 @@
 import * as assert from "assert";
-import * as stringFns from "../stringFns";
+import * as stringFns from "../stringFns.js";
+
 import type { RawRowsColumnsReturn } from "../types";
 
 

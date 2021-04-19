@@ -1,5 +1,5 @@
 import * as assert from "assert";
-import * as dateTimeFns from "../dateTimeFns";
+import * as dateTimeFns from "../dateTimeFns.js";
 
 
 describe("dateTimeFns", () => {

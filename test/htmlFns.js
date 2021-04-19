@@ -1,7 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const assert = require("assert");
-const htmlFns = require("../htmlFns");
+import * as assert from "assert";
+import * as htmlFns from "../htmlFns.js";
 describe("htmlFns", () => {
     describe("#formatDollarsAsHTML()", () => {
         it("Converts 1.23 to $1.23", () => {

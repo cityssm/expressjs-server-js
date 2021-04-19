@@ -1,7 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const assert = require("assert");
-const stringFns = require("../stringFns");
+import * as assert from "assert";
+import * as stringFns from "../stringFns.js";
 describe("stringFns", () => {
     describe("#rawToCSV()", () => {
         it("Converts raw output from better-sqlite3 to CSV", () => {

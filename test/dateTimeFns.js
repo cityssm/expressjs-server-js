@@ -1,7 +1,5 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const assert = require("assert");
-const dateTimeFns = require("../dateTimeFns");
+import * as assert from "assert";
+import * as dateTimeFns from "../dateTimeFns.js";
 describe("dateTimeFns", () => {
     describe("#dateToInteger()", () => {
         it("Converts new Date(1970, 1 - 1, 1) to 19700101", () => {

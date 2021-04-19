@@ -1,5 +1,5 @@
 import * as assert from "assert";
-import * as htmlFns from "../htmlFns";
+import * as htmlFns from "../htmlFns.js";
 
 
 describe("htmlFns", () => {

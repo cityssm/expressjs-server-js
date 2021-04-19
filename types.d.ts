@@ -1,4 +1,4 @@
-import sqlite = require("better-sqlite3");
+import type * as sqlite from "better-sqlite3";
 export interface RawRowsColumnsReturn {
     rows: object[];
     columns: sqlite.ColumnDefinition[];
