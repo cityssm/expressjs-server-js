@@ -10,7 +10,10 @@
     "sourceType": "module"
   },
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "import",
+    "node",
+    "unicorn"
   ],
   "extends": [
     "eslint:recommended",

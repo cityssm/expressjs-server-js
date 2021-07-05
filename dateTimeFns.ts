@@ -1,3 +1,6 @@
+import { dateDiff } from "@cityssm/date-diff";
+
+
 export const months = [
   "January",
   "February",
@@ -31,17 +34,17 @@ export const days = [
 
 // From Date Object
 
-export const dateToInteger = (dateObj: Date): number => {
-  return (dateObj.getFullYear() * 10000) +
-    (dateObj.getMonth() * 100) + 100 +
-    dateObj.getDate();
+export const dateToInteger = (dateObject: Date): number => {
+  return (dateObject.getFullYear() * 10_000) +
+    (dateObject.getMonth() * 100) + 100 +
+    dateObject.getDate();
 };
 
-export const dateToString = (dateObj: Date): string => {
+export const dateToString = (dateObject: Date): string => {
 
-  return dateObj.getFullYear().toString() + "-" +
-    ("0" + (dateObj.getMonth() + 1).toString()).slice(-2) + "-" +
-    ("0" + dateObj.getDate().toString()).slice(-2);
+  return dateObject.getFullYear().toString() + "-" +
+    ("0" + (dateObject.getMonth() + 1).toString()).slice(-2) + "-" +
+    ("0" + dateObject.getDate().toString()).slice(-2);
 };
 
 // From Date Integer
@@ -54,49 +57,43 @@ export function dateIntegerToString(dateInteger: number): string {
   }
 
   const dateString = dateInteger.toString();
-  return dateString.substring(0, 4) + "-" + dateString.substring(4, 6) + "-" + dateString.substring(6, 8);
+  return dateString.slice(0, 4) + "-" + dateString.slice(4, 6) + "-" + dateString.slice(6, 8);
 
 }
 
 export function dateIntegerToDate(dateInteger: number): Date {
 
   if (dateInteger === null || dateInteger === 0) {
-    return null;
+    return undefined;
   }
 
   const dateString = dateInteger.toString();
   return new Date(
-    parseInt(dateString.substring(0, 4), 10),
-    parseInt(dateString.substring(4, 6), 10) - 1,
-    parseInt(dateString.substring(6, 8), 10));
+    Number.parseInt(dateString.slice(0, 4), 10),
+    Number.parseInt(dateString.slice(4, 6), 10) - 1,
+    Number.parseInt(dateString.slice(6, 8), 10));
 
 }
 
 // From Date String
 // "2020-04-25"
 
-export function dateStringToDate(dateString: string) {
-
+export const dateStringToDate = (dateString: string): Date => {
   const datePieces = dateString.split("-");
-  return new Date(parseInt(datePieces[0], 10), parseInt(datePieces[1], 10) - 1, parseInt(datePieces[2], 10), 0, 0, 0, 0);
-}
+  return new Date(Number.parseInt(datePieces[0], 10), Number.parseInt(datePieces[1], 10) - 1, Number.parseInt(datePieces[2], 10), 0, 0, 0, 0);
+};
 
-export function dateStringToInteger(dateString: string): number {
+export const dateStringToInteger = (dateString: string): number => {
+  return Number.parseInt(("0" + dateString).replace(/-/g, ""), 10);
+};
 
-  return parseInt(("0" + dateString).replace(/-/g, ""), 10);
+export const dateDifferenceInDays = (fromDateObject: Date, toDateObject: Date): number => {
+  return Math.round(dateDiff(fromDateObject, toDateObject).inDays);
+};
 
-}
-
-
-export function dateDifferenceInDays(fromDateObj: Date, toDateObj: Date) {
-
-  return Math.round((toDateObj.getTime() - fromDateObj.getTime()) / (86400 * 1000.0));
-}
-
-export function dateStringDifferenceInDays(fromDateString: string, toDateString: string) {
-
+export const dateStringDifferenceInDays = (fromDateString: string, toDateString: string): number => {
   return dateDifferenceInDays(dateStringToDate(fromDateString), dateStringToDate(toDateString));
-}
+};
 
 
 /*
@@ -105,31 +102,28 @@ export function dateStringDifferenceInDays(fromDateString: string, toDateString:
 
 // From Date Object
 
-export function dateToTimeInteger(dateObj: Date): number {
-  return (dateObj.getHours() * 100) + dateObj.getMinutes();
-}
+export const dateToTimeInteger = (dateObject: Date): number => {
+  return (dateObject.getHours() * 100) + dateObject.getMinutes();
+};
 
-export function dateToTimeString(dateObj: Date): string {
-  return ("00" + dateObj.getHours().toString()).slice(-2) +
+export const dateToTimeString = (dateObject: Date): string => {
+  return ("00" + dateObject.getHours().toString()).slice(-2) +
     ":" +
-    ("00" + dateObj.getMinutes().toString()).slice(-2);
-}
+    ("00" + dateObject.getMinutes().toString()).slice(-2);
+};
 
 // From Time Integer
 // 1424
 
-export function timeIntegerToString(timeInteger: number): string {
+export const timeIntegerToString = (timeInteger: number): string => {
 
   const timeString = ("0000" + (timeInteger || 0).toString()).slice(-4);
-  return timeString.substring(0, 2) + ":" + timeString.substring(2, 4);
-
-}
+  return timeString.slice(0, 2) + ":" + timeString.slice(2, 4);
+};
 
 // From Time String
 // "14:24"
 
-export function timeStringToInteger(timeString: string): number {
-
-  return parseInt(("0" + timeString).replace(/:/g, ""), 10);
-
-}
+export const timeStringToInteger = (timeString: string): number => {
+  return Number.parseInt(("0" + timeString).replace(/:/g, ""), 10);
+};

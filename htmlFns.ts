@@ -1,16 +1,13 @@
-export const formatDollarsAsHTML = (dollarAmt: number) => {
-
-  if (dollarAmt < 0) {
-    return "<span class=\"has-text-danger\">($" + (dollarAmt * -1).toFixed(2) + ")</span>";
-  } else {
-    return "$" + dollarAmt.toFixed(2);
-  }
+export const formatDollarsAsHTML = (dollarAmt: number): string => {
+  return dollarAmt < 0
+    ? "<span class=\"has-text-danger\">($" + (dollarAmt * -1).toFixed(2) + ")</span>"
+    : "$" + dollarAmt.toFixed(2);
 };
 
 
-export const escapeHTML = (str: string): string => {
+export const escapeHTML = (string: string): string => {
 
-  return String(str)
+  return String(string)
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")

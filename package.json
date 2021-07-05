@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/cityssm/expressjs-server-js#readme",
   "dependencies": {
+    "@cityssm/date-diff": "^2.2.1",
     "@cityssm/simple-password-generator": "^2.0.2",
     "convert-array-to-csv": "^2.0.0"
   },
