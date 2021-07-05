@@ -31,21 +31,18 @@ export const days = [
 
 // From Date Object
 
-export function dateToInteger(dateObj: Date): number {
-
+export const dateToInteger = (dateObj: Date): number => {
   return (dateObj.getFullYear() * 10000) +
     (dateObj.getMonth() * 100) + 100 +
     dateObj.getDate();
+};
 
-}
-
-export function dateToString(dateObj: Date): string {
+export const dateToString = (dateObj: Date): string => {
 
   return dateObj.getFullYear().toString() + "-" +
     ("0" + (dateObj.getMonth() + 1).toString()).slice(-2) + "-" +
     ("0" + dateObj.getDate().toString()).slice(-2);
-
-}
+};
 
 // From Date Integer
 // 20200425

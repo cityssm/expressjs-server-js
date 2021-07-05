@@ -1,2 +1,2 @@
-export declare function formatDollarsAsHTML(dollarAmt: number): string;
-export declare function escapeHTML(str: string): string;
+export declare const formatDollarsAsHTML: (dollarAmt: number) => string;
+export declare const escapeHTML: (str: string) => string;

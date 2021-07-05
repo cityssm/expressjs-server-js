@@ -19,7 +19,6 @@ export const rawToCSV = (rowsColumnsObj: RawRowsColumnsReturn): string => {
   });
 
   return csv;
-
 };
 
 

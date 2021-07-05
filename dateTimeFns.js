@@ -21,16 +21,16 @@ export const days = [
     "Friday",
     "Saturday"
 ];
-export function dateToInteger(dateObj) {
+export const dateToInteger = (dateObj) => {
     return (dateObj.getFullYear() * 10000) +
         (dateObj.getMonth() * 100) + 100 +
         dateObj.getDate();
-}
-export function dateToString(dateObj) {
+};
+export const dateToString = (dateObj) => {
     return dateObj.getFullYear().toString() + "-" +
         ("0" + (dateObj.getMonth() + 1).toString()).slice(-2) + "-" +
         ("0" + dateObj.getDate().toString()).slice(-2);
-}
+};
 export function dateIntegerToString(dateInteger) {
     if (dateInteger === null || dateInteger === 0) {
         return "";
