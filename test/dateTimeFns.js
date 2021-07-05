@@ -23,11 +23,11 @@ describe("dateTimeFns", () => {
         it("Converts 19700101 to Date(1970, 1 - 1, 1)", () => {
             assert.strictEqual(dateTimeFns.dateIntegerToDate(19700101).getTime(), new Date(1970, 1 - 1, 1).getTime());
         });
-        it("Converts null to null", () => {
-            assert.strictEqual(dateTimeFns.dateIntegerToDate(null), null);
+        it("Converts null to undefined", () => {
+            assert.strictEqual(dateTimeFns.dateIntegerToDate(null), undefined);
         });
         it("Converts 0 to null", () => {
-            assert.strictEqual(dateTimeFns.dateIntegerToDate(0), null);
+            assert.strictEqual(dateTimeFns.dateIntegerToDate(0), undefined);
         });
     });
     describe("#dateStringToDate()", () => {

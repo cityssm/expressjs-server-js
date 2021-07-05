@@ -57,7 +57,7 @@ export const dateDifferenceInDays = (fromDateObject, toDateObject) => {
     return Math.round(dateDiff(fromDateObject, toDateObject).inDays);
 };
 export const dateStringDifferenceInDays = (fromDateString, toDateString) => {
-    return dateDifferenceInDays(dateStringToDate(fromDateString), dateStringToDate(toDateString));
+    return Math.round(dateDiff(dateStringToDate(fromDateString), dateStringToDate(toDateString)).inDays);
 };
 export const dateToTimeInteger = (dateObject) => {
     return (dateObject.getHours() * 100) + dateObject.getMinutes();

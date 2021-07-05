@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import { dateDiff } from "@cityssm/date-diff";
 
 
@@ -87,12 +88,15 @@ export const dateStringToInteger = (dateString: string): number => {
   return Number.parseInt(("0" + dateString).replace(/-/g, ""), 10);
 };
 
+/**
+ * @deprecated Use @cityssm/date-diff instead.
+ */
 export const dateDifferenceInDays = (fromDateObject: Date, toDateObject: Date): number => {
   return Math.round(dateDiff(fromDateObject, toDateObject).inDays);
 };
 
 export const dateStringDifferenceInDays = (fromDateString: string, toDateString: string): number => {
-  return dateDifferenceInDays(dateStringToDate(fromDateString), dateStringToDate(toDateString));
+  return Math.round(dateDiff(dateStringToDate(fromDateString), dateStringToDate(toDateString)).inDays);
 };
 
 

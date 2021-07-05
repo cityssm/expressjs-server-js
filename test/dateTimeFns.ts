@@ -6,6 +6,7 @@ describe("dateTimeFns", () => {
 
   describe("#dateToInteger()", () => {
     it("Converts new Date(1970, 1 - 1, 1) to 19700101", () => {
+      // eslint-disable-next-line unicorn/numeric-separators-style
       assert.strictEqual(dateTimeFns.dateToInteger(new Date(1970, 1 - 1, 1)), 19700101);
     });
   });
@@ -18,25 +19,29 @@ describe("dateTimeFns", () => {
 
   describe("#dateIntegerToString()", () => {
     it("Converts 19700101 to \"1970-01-01\"", () => {
+      // eslint-disable-next-line unicorn/numeric-separators-style
       assert.strictEqual(dateTimeFns.dateIntegerToString(19700101), "1970-01-01");
     });
 
     it("Converts null to \"\"", () => {
+      // eslint-disable-next-line unicorn/no-null
       assert.strictEqual(dateTimeFns.dateIntegerToString(null), "");
     });
   });
 
   describe("#dateIntegerToDate()", () => {
     it("Converts 19700101 to Date(1970, 1 - 1, 1)", () => {
+      // eslint-disable-next-line unicorn/numeric-separators-style
       assert.strictEqual(dateTimeFns.dateIntegerToDate(19700101).getTime(), new Date(1970, 1 - 1, 1).getTime());
     });
 
-    it("Converts null to null", () => {
-      assert.strictEqual(dateTimeFns.dateIntegerToDate(null), null);
+    it("Converts null to undefined", () => {
+      // eslint-disable-next-line unicorn/no-null
+      assert.strictEqual(dateTimeFns.dateIntegerToDate(null), undefined);
     });
 
     it("Converts 0 to null", () => {
-      assert.strictEqual(dateTimeFns.dateIntegerToDate(0), null);
+      assert.strictEqual(dateTimeFns.dateIntegerToDate(0), undefined);
     });
   });
 
@@ -48,6 +53,7 @@ describe("dateTimeFns", () => {
 
   describe("#dateStringToInteger()", () => {
     it("Converts \"1970-01-01\" to 19700101", () => {
+      // eslint-disable-next-line unicorn/numeric-separators-style
       assert.strictEqual(dateTimeFns.dateStringToInteger("1970-01-01"), 19700101);
     });
   });
