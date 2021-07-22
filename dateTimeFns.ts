@@ -89,7 +89,7 @@ export const dateStringToInteger = (dateString: string): number => {
 };
 
 /**
- * @deprecated Use @cityssm/date-diff instead.
+ * @deprecated Use @cityssm/date-diff directly instead.
  */
 export const dateDifferenceInDays = (fromDateObject: Date, toDateObject: Date): number => {
   return Math.round(dateDiff(fromDateObject, toDateObject).inDays);
