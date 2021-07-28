@@ -51,7 +51,7 @@ export const dateToString = (dateObject: Date): string => {
 // From Date Integer
 // 20200425
 
-export function dateIntegerToString(dateInteger: number): string {
+export const dateIntegerToString = (dateInteger: number): string => {
 
   if (dateInteger === null || dateInteger === 0) {
     return "";
@@ -59,10 +59,9 @@ export function dateIntegerToString(dateInteger: number): string {
 
   const dateString = dateInteger.toString();
   return dateString.slice(0, 4) + "-" + dateString.slice(4, 6) + "-" + dateString.slice(6, 8);
+};
 
-}
-
-export function dateIntegerToDate(dateInteger: number): Date {
+export const dateIntegerToDate = (dateInteger: number): Date => {
 
   if (dateInteger === null || dateInteger === 0) {
     return undefined;
@@ -79,9 +78,18 @@ export function dateIntegerToDate(dateInteger: number): Date {
 // From Date String
 // "2020-04-25"
 
-export const dateStringToDate = (dateString: string): Date => {
+export const dateStringToDate = (dateString: string, timeString = "00:00"): Date => {
+
   const datePieces = dateString.split("-");
-  return new Date(Number.parseInt(datePieces[0], 10), Number.parseInt(datePieces[1], 10) - 1, Number.parseInt(datePieces[2], 10), 0, 0, 0, 0);
+  const timePieces = timeString.split(":");
+
+  return new Date(
+    Number.parseInt(datePieces[0], 10),
+    Number.parseInt(datePieces[1], 10) - 1,
+    Number.parseInt(datePieces[2], 10),
+    Number.parseInt(timePieces[0], 10),
+    Number.parseInt(timePieces[1], 10),
+    0, 0);
 };
 
 export const dateStringToInteger = (dateString: string): number => {

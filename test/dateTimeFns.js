@@ -34,6 +34,9 @@ describe("dateTimeFns", () => {
         it("Converts \"1970-01-01\" to Date(1970, 1 - 1, 1)", () => {
             assert.strictEqual(dateTimeFns.dateStringToDate("1970-01-01").getTime(), new Date(1970, 1 - 1, 1).getTime());
         });
+        it("Converts \"1970-01-01 4:56\" to Date(1970, 1 - 1, 1, 4, 56)", () => {
+            assert.strictEqual(dateTimeFns.dateStringToDate("1970-01-01", "4:56").getTime(), new Date(1970, 1 - 1, 1, 4, 56).getTime());
+        });
     });
     describe("#dateStringToInteger()", () => {
         it("Converts \"1970-01-01\" to 19700101", () => {

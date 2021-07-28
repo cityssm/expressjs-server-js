@@ -32,23 +32,24 @@ export const dateToString = (dateObject) => {
         ("0" + (dateObject.getMonth() + 1).toString()).slice(-2) + "-" +
         ("0" + dateObject.getDate().toString()).slice(-2);
 };
-export function dateIntegerToString(dateInteger) {
+export const dateIntegerToString = (dateInteger) => {
     if (dateInteger === null || dateInteger === 0) {
         return "";
     }
     const dateString = dateInteger.toString();
     return dateString.slice(0, 4) + "-" + dateString.slice(4, 6) + "-" + dateString.slice(6, 8);
-}
-export function dateIntegerToDate(dateInteger) {
+};
+export const dateIntegerToDate = (dateInteger) => {
     if (dateInteger === null || dateInteger === 0) {
         return undefined;
     }
     const dateString = dateInteger.toString();
     return new Date(Number.parseInt(dateString.slice(0, 4), 10), Number.parseInt(dateString.slice(4, 6), 10) - 1, Number.parseInt(dateString.slice(6, 8), 10));
-}
-export const dateStringToDate = (dateString) => {
+};
+export const dateStringToDate = (dateString, timeString = "00:00") => {
     const datePieces = dateString.split("-");
-    return new Date(Number.parseInt(datePieces[0], 10), Number.parseInt(datePieces[1], 10) - 1, Number.parseInt(datePieces[2], 10), 0, 0, 0, 0);
+    const timePieces = timeString.split(":");
+    return new Date(Number.parseInt(datePieces[0], 10), Number.parseInt(datePieces[1], 10) - 1, Number.parseInt(datePieces[2], 10), Number.parseInt(timePieces[0], 10), Number.parseInt(timePieces[1], 10), 0, 0);
 };
 export const dateStringToInteger = (dateString) => {
     return Number.parseInt(("0" + dateString).replace(/-/g, ""), 10);
