@@ -17,22 +17,22 @@ describe("stringFns", () => {
         columns: [
           {
             name: "col1",
-            column: null,
-            table: null,
-            database: null,
-            type: null
+            column: undefined,
+            table: undefined,
+            database: undefined,
+            type: undefined
           }, {
             name: "col2",
-            column: null,
-            table: null,
-            database: null,
-            type: null
+            column: undefined,
+            table: undefined,
+            database: undefined,
+            type: undefined
           }, {
             name: "col3",
-            column: null,
-            table: null,
-            database: null,
-            type: null
+            column: undefined,
+            table: undefined,
+            database: undefined,
+            type: undefined
           }
         ]
       };
@@ -54,6 +54,17 @@ describe("stringFns", () => {
   describe("#getUID()", () => {
     it("Two consecutive calls return different values", () => {
       assert.notStrictEqual(stringFns.getUID(), stringFns.getUID());
+    });
+  });
+
+  describe("#formatPhoneNumber()", () => {
+
+    it("Formats 7055555555", () => {
+      assert.notStrictEqual(stringFns.formatPhoneNumber("7055555555"), "7055555555");
+    });
+
+    it("Formats 7055555555 x222", () => {
+      assert.notStrictEqual(stringFns.formatPhoneNumber("7055555555 x222"), "7055555555 x222");
     });
   });
 });
