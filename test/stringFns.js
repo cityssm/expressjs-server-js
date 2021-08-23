@@ -52,5 +52,8 @@ describe("stringFns", () => {
         it("Formats 7055555555 x222", () => {
             assert.notStrictEqual(stringFns.formatPhoneNumber("7055555555 x222"), "7055555555 x222");
         });
+        it("Returns \"x\" for \"x\"", () => {
+            assert.strictEqual(stringFns.formatPhoneNumber("x"), "x");
+        });
     });
 });

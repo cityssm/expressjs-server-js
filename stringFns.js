@@ -28,5 +28,9 @@ export const setPhoneNumberCountryCode = (countryCode) => {
     phoneNumberCountryCode = countryCode;
 };
 export const formatPhoneNumber = (unformattedPhoneNumber, countryCode = phoneNumberCountryCode) => {
-    return phoneNumberJS(unformattedPhoneNumber, countryCode).formatNational();
+    const pn = phoneNumberJS(unformattedPhoneNumber || "", countryCode);
+    if (pn) {
+        return pn.formatNational() || unformattedPhoneNumber;
+    }
+    return unformattedPhoneNumber;
 };

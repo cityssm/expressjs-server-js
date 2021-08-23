@@ -1,6 +1,6 @@
 {
   "name": "@cityssm/expressjs-server-js",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "Shared server-side JavaScript modules used by the lottery-licence-manager and others.",
   "type": "module",
   "engines": {
