@@ -15,6 +15,9 @@ describe("dateTimeFns", () => {
         it("Converts 19700101 to \"1970-01-01\"", () => {
             assert.strictEqual(dateTimeFns.dateIntegerToString(19700101), "1970-01-01");
         });
+        it("Converts 10101 to \"0001-01-01\"", () => {
+            assert.strictEqual(dateTimeFns.dateIntegerToString(10101), "0001-01-01");
+        });
         it("Converts null to \"\"", () => {
             assert.strictEqual(dateTimeFns.dateIntegerToString(null), "");
         });

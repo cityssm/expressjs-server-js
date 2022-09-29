@@ -57,7 +57,7 @@ export const dateIntegerToString = (dateInteger: number): string => {
     return "";
   }
 
-  const dateString = dateInteger.toString();
+  const dateString = ("00000000" + dateInteger.toString()).slice(-8);
   return dateString.slice(0, 4) + "-" + dateString.slice(4, 6) + "-" + dateString.slice(6, 8);
 };
 

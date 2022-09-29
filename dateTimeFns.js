@@ -36,7 +36,7 @@ export const dateIntegerToString = (dateInteger) => {
     if (dateInteger === null || dateInteger === 0) {
         return "";
     }
-    const dateString = dateInteger.toString();
+    const dateString = ("00000000" + dateInteger.toString()).slice(-8);
     return dateString.slice(0, 4) + "-" + dateString.slice(4, 6) + "-" + dateString.slice(6, 8);
 };
 export const dateIntegerToDate = (dateInteger) => {
