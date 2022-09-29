@@ -43,7 +43,7 @@ export const dateIntegerToDate = (dateInteger) => {
     if (dateInteger === null || dateInteger === 0) {
         return undefined;
     }
-    const dateString = dateInteger.toString();
+    const dateString = ("00000000" + dateInteger.toString()).slice(-8);
     return new Date(Number.parseInt(dateString.slice(0, 4), 10), Number.parseInt(dateString.slice(4, 6), 10) - 1, Number.parseInt(dateString.slice(6, 8), 10));
 };
 export const dateStringToDate = (dateString, timeString = "00:00") => {
