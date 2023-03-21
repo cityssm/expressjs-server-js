@@ -1,5 +1,7 @@
 # expressjs-server-js
 
+**❗ Deprecating to split up into smaller projects.**
+
 [![npm](https://img.shields.io/npm/v/@cityssm/expressjs-server-js)](https://www.npmjs.com/package/@cityssm/expressjs-server-js)
 [![Codacy Badge](https://img.shields.io/codacy/grade/3bf6bd7b5b704d05ac24f974592369f3)](https://www.codacy.com/gh/cityssm/expressjs-server-js)
 [![Maintainability](https://img.shields.io/codeclimate/maintainability/cityssm/expressjs-server-js)](https://codeclimate.com/github/cityssm/expressjs-server-js/maintainability)
